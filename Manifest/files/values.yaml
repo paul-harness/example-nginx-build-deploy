@@ -1,4 +1,4 @@
-name: example-nodeport
+name: example-main
 replicas: 1
 
 image: ${artifact.metadata.image}
