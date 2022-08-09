@@ -2,4 +2,4 @@ FROM nginx:latest
 
 RUN echo "welcome to nginx"
 RUN mkdir meta
-ADD harness/Dockerfile/meta meta
+ADD Dockerfile/meta meta
