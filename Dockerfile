@@ -1,3 +1,3 @@
-FROM ubuntu:latest
+FROM nginx:latest
 
-RUN echo "welcome to ubuntu"
+RUN echo "welcome to nginx"
