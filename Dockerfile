@@ -1,3 +1,3 @@
-FROM nginx:latest
+FROM ubuntu:latest
 
-RUN apt update -y
+RUN echo "welcome to ubuntu"
