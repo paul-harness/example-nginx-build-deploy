@@ -15,21 +15,19 @@
                   branch: master
                 type: branch
     waitForCompletion: 'false'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: InvokeRESTAPI@1
+  inputs:
+    connectionType: 'connectedServiceName'
+    serviceConnection: 'Harness NG REST API'
+    method: 'POST'
+    body: |
+      pipeline:
+        identifier: STO_Stage_Demo
+        properties:
+          ci:
+            codebase:
+              build:
+                spec:
+                  branch: master
+                type: branch
+    waitForCompletion: 'false'
